@@ -1,0 +1,11 @@
+version: "3.0"
+services:
+  grass_webui:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    restart: always
+    container_name: getgrass_webui
+    network_mode: bridge
+    ports:
+      - "8000:8000"
