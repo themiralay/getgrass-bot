@@ -1,55 +1,51 @@
-# GetGrass WebUI
+# Get Grass With WebUI
 
-GetGrass WebUI, çim puanınızı birden çok hesapla almanızı sağlayan bir Python aracıdır. Bu araç, kullanıcıların hesap bilgilerini yüklemelerine ve çim puanlarını otomatik olarak almasına olanak sağlar.
+Welcome to GetGrass WebUI, a powerful Python tool designed to help you accumulate grass score across multiple accounts effortlessly.
 
-## Başlangıç
+## Features
 
-Bu projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin.
+- Supports multiple accounts
+- Easy to use WebUI
+- Proxy support for each account
+- Docker support for easy deployment
 
-### Gereksinimler
+## Running the Application
 
-- Python 3
-- Pip (Python Paket Yöneticisi)
+### Directly
 
-### Kurulum
-
-1. Projeyi klonlayın:
-    ```bash
-    git clone https://github.com/Confusion-ymc/GetGrassWebUI.git
-    ```
-2. Gerekli Python paketlerini yükleyin:
+1. Install the required Python packages:
     ```bash
     pip3 install -r requirements.txt
     ```
-3. Uygulamayı başlatın:
+2. Start the application:
     ```bash
     python3 main.py
     ```
-4. Tarayıcınızda `http://127.0.0.1:8000` adresini ziyaret edin.
-5. "Dosya Yükle" düğmesine tıklayarak düzenlenmiş `account.txt` dosyasını yükleyin.
+3. Open your web browser and visit `http://127.0.0.1:8000`.
+4. Click on "Upload File" and upload your pre-configured `account.txt` file.
 
-## Docker ile Çalıştırma
+### With Docker Compose
 
-1. Projeyi klonlayın:
+1. Clone the project:
     ```bash
     git clone https://github.com/Confusion-ymc/GetGrassWebUI.git
     ```
-2. Docker Compose ile uygulamayı başlatın:
+2. Start the application with Docker Compose:
     ```bash
     docker compose up --build -d
     ```
-3. Tarayıcınızda `http://{container_ip}:8000` adresini ziyaret edin.
-4. "Dosya Yükle" düğmesine tıklayarak düzenlenmiş `account.txt` dosyasını yükleyin.
+3. Open your web browser and visit `http://{container_ip}:8000`.
+4. Click on "Upload File" and upload your pre-configured `account.txt` file.
 
-## `account.txt` Dosya Formatı
+## `account.txt` File Format
 
-- Proxy Konfigürasyonu Olmadan
-  - Her satır bir hesap konfigürasyonunu temsil eder.
-  - Proxy yoksa, format sadece bir satırda `user_id`, bir çizgi (`-----`) ile ayrılır.
-- Proxy Konfigürasyonu ile
-  - Proxy kullanılıyorsa, satırın sonuna `==proxy_address` ekleyin. Format `user_id==socks5://proxy.com:1080` şeklindedir.
+- Without Proxy Configuration
+  - Each line represents one account configuration.
+  - If there's no proxy, the format is simply `user_id` on one line, separated by a dash (`-----`).
+- With Proxy Configuration
+  - If using a proxy, append `==proxy_address` at the end of the line. The format is `user_id==socks5://proxy.com:1080`.
 
-- Örneğin:
+- For example:
  ```text
 d1b88fee-8078-46bc-aaed-df7196183f5f==http://proxy.com:8080
 d1b88fee-8078-46bc-aaed-df7196183f5f
